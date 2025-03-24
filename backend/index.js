@@ -1,5 +1,10 @@
 const express = require('express');
 const app = express();
+app.use(express.json());
+
+const userRoutes = require('./routes/user');
+app.use('/api', userRoutes);
+
 const PORT = 5001;
 
 app.get('/api/ping', (req, res) => {
