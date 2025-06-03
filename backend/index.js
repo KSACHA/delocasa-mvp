@@ -5,6 +5,9 @@ app.use(express.json());
 const userRoutes = require('./routes/user');
 app.use('/api', userRoutes);
 
+const deloStatusRoutes = require('./routes/deloStatus'); // 👈 filename is camelCase
+app.use('/api', deloStatusRoutes);
+
 const PORT = 5001;
 
 app.get('/api/ping', (req, res) => {
